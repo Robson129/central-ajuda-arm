@@ -344,6 +344,10 @@ function criarCore(D){
   var C = criarCore(D);
   var $ = function(s){ return document.querySelector(s); };
   var app = $("#app");
+  var nomeEl = $("#brandName");
+if (nomeEl) nomeEl.textContent = D.empresa.nome;
+var rod = $("footer");
+if (rod) rod.innerHTML = '<span id="footName">' + C.esc(D.empresa.empresa) + '</span> · ' + C.esc(D.textos.rodape);
   var filtro = "todos", busca = "", atual = "";
   try { filtro = localStorage.getItem("filtro") || "todos"; } catch(e){}
   try { atual = location.hash.slice(1); } catch(e){}
